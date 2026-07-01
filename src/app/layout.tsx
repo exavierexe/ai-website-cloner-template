@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Resend · Email for developers",
+  description: "The best way to reach humans instead of spam folders. Deliver transactional and marketing emails at scale.",
+  openGraph: {
+    title: "Resend · Email for developers",
+    description: "The best way to reach humans instead of spam folders. Deliver transactional and marketing emails at scale.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
@@ -25,9 +26,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} scroll-smooth dark`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="bg-black font-sans text-white antialiased">{children}</body>
     </html>
   );
 }
