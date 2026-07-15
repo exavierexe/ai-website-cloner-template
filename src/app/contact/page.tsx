@@ -32,14 +32,6 @@ export default function ContactPage() {
                   info@greasemonkeyshop.co.nz
                 </a>
               </div>
-              
-              <div>
-                <p className="text-gray-500 uppercase text-sm font-bold tracking-widest mb-2">Our Address</p>
-                <address className="not-italic text-lg text-white font-medium">
-                  11 Auburn Street,<br />
-                  Takapuna Auckland 0622
-                </address>
-              </div>
             </div>
           </div>
 

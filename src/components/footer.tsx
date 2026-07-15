@@ -16,13 +16,6 @@ export function Footer() {
                 021 403 346
               </a>
             </div>
-            <div className="pt-4 border-t border-[#333]">
-              <p className="text-gray-400 mb-2 uppercase text-sm font-semibold tracking-wider">Our Address</p>
-              <address className="not-italic text-sm text-gray-300">
-                11 Auburn Street,<br />
-                Takapuna Auckland 0622
-              </address>
-            </div>
           </div>
           
           <div>
