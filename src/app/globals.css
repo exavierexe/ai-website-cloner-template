@@ -2,15 +2,6 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* Custom Fonts */
-@font-face {
-  font-family: 'Domaine';
-  src: local('Georgia'), local('Times New Roman');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
@@ -58,50 +49,15 @@
 }
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 0 0% 3.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 3.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 3.9%;
-  --primary: 0 0% 9%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 0 0% 96.1%;
-  --secondary-foreground: 0 0% 9%;
-  --muted: 0 0% 96.1%;
-  --muted-foreground: 0 0% 45.1%;
-  --accent: 0 0% 96.1%;
-  --accent-foreground: 0 0% 9%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 0 0% 89.8%;
-  --input: 0 0% 89.8%;
-  --ring: 0 0% 3.9%;
-  --radius: 0.5rem;
-  --chart-1: 0 0% 0%;
-  --chart-2: 0 0% 0%;
-  --chart-3: 0 0% 0%;
-  --chart-4: 0 0% 0%;
-  --chart-5: 0 0% 0%;
-  --sidebar: 0 0% 100%;
-  --sidebar-foreground: 0 0% 3.9%;
-  --sidebar-primary: 0 0% 9%;
-  --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 0 0% 96.1%;
-  --sidebar-accent-foreground: 0 0% 9%;
-  --sidebar-border: 0 0% 89.8%;
-  --sidebar-ring: 0 0% 3.9%;
-}
-
-.dark {
+  /* Defaulting to a dark theme natively for this site */
   --background: 0 0% 0%;
   --foreground: 0 0% 100%;
   --card: 217 19% 7%;
   --card-foreground: 0 0% 100%;
   --popover: 217 19% 7%;
   --popover-foreground: 0 0% 100%;
-  --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 0%;
+  --primary: 11 100% 57%; /* #ff4d24 */
+  --primary-foreground: 0 0% 100%;
   --secondary: 217 19% 7%;
   --secondary-foreground: 0 0% 100%;
   --muted: 217 19% 7%;
@@ -112,15 +68,51 @@
   --destructive-foreground: 0 0% 100%;
   --border: 0 0% 14.9%;
   --input: 0 0% 14.9%;
-  --ring: 0 0% 83.1%;
+  --ring: 11 100% 57%;
+  --radius: 0.5rem;
+  --chart-1: 0 0% 0%;
+  --chart-2: 0 0% 0%;
+  --chart-3: 0 0% 0%;
+  --chart-4: 0 0% 0%;
+  --chart-5: 0 0% 0%;
   --sidebar: 217 19% 7%;
   --sidebar-foreground: 0 0% 100%;
-  --sidebar-primary: 0 0% 100%;
-  --sidebar-primary-foreground: 0 0% 0%;
+  --sidebar-primary: 11 100% 57%;
+  --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 217 19% 7%;
   --sidebar-accent-foreground: 0 0% 100%;
   --sidebar-border: 0 0% 14.9%;
-  --sidebar-ring: 0 0% 83.1%;
+  --sidebar-ring: 11 100% 57%;
+}
+
+.dark {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 217 19% 7%;
+  --card-foreground: 0 0% 100%;
+  --popover: 217 19% 7%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 11 100% 57%; /* #ff4d24 */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 217 19% 7%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 217 19% 7%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 217 19% 7%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 11 100% 57%;
+  --sidebar: 217 19% 7%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 11 100% 57%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 217 19% 7%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 0 0% 14.9%;
+  --sidebar-ring: 11 100% 57%;
 }
 
 @layer base {
@@ -135,7 +127,7 @@
   
   body {
     @apply text-white antialiased;
-    @apply selection:bg-white/10 selection:text-white;
+    @apply selection:bg-primary/20 selection:text-white;
     background-color: #000000;
     font-feature-settings: "rlig" 1, "calt" 1;
     text-rendering: optimizeLegibility;
@@ -144,9 +136,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Domaine', Georgia, serif;
-    font-weight: 500;
-    letter-spacing: -0.03em;
+    @apply font-sans font-bold tracking-tight;
   }
 }
 

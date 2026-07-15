@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -9,13 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Resend · Email for developers",
-  description: "The best way to reach humans instead of spam folders. Deliver transactional and marketing emails at scale.",
-  openGraph: {
-    title: "Resend · Email for developers",
-    description: "The best way to reach humans instead of spam folders. Deliver transactional and marketing emails at scale.",
-    images: ["/og-image.png"],
-  },
+  title: "Grease Monkey | Your one stop shop for premium car wash products",
+  description: "Our range of exterior and interior car grooming sprays and hydrophobic solutions will leave your vehicle looking stunning.",
 };
 
 export default function RootLayout({
@@ -28,7 +25,14 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} scroll-smooth dark`}
     >
-      <body className="bg-black font-sans text-white antialiased">{children}</body>
+      <body className="bg-black font-sans text-white antialiased min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
+
