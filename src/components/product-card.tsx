@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { useCart } from "@/hooks/use-cart";
+import type { Product } from "@/lib/products";
 
 interface ProductCardProps {
   id: string;
@@ -11,6 +15,10 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ id, name, price, image, category }: ProductCardProps) {
+  const { addItem } = useCart();
+
+  const product: Product = { id, name, price, image, category };
+
   return (
     <div className="group relative flex flex-col items-center text-center bg-card transition-all duration-300 hover:-translate-y-2">
       <div className="relative w-full aspect-square mb-6 bg-[#1a1a1a] overflow-hidden">
@@ -21,7 +29,10 @@ export function ProductCard({ id, name, price, image, category }: ProductCardPro
           className="object-contain p-8 transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <Button className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 uppercase font-bold tracking-wider rounded-none px-8">
+          <Button
+            onClick={() => addItem(product)}
+            className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 uppercase font-bold tracking-wider rounded-none px-8"
+          >
             Add to Cart
           </Button>
         </div>

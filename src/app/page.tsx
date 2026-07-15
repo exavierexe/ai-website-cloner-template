@@ -1,25 +1,26 @@
 import Image from "next/image";
 import { ProductCard } from "@/components/product-card";
 import { Button } from "@/components/ui/button";
+import { getProductById } from "@/lib/products";
 
 export default function Home() {
   const bestSellers = [
-    { id: "wheel-magic", name: "Wheel Magic (500ml)", price: "29.99", image: "/images/Wheel-Magic.png", category: "EXTERIOR" },
-    { id: "bead-it", name: "BEAD IT (500ml)", price: "99.99", image: "/images/Bead-It.png", category: "EXTERIOR" },
-    { id: "waterless-wash", name: "Waterless Wash (500ml)", price: "29.99", image: "/images/Waterless-Wash.png", category: "EXTERIOR" },
-  ];
+    "wheel-magic",
+    "bead-it",
+    "waterless-wash",
+  ].map((id) => getProductById(id)!);
 
   const topRated = [
-    { id: "like-new", name: "Like New Exterior & Interior Satin Dressing (500ml)", price: "29.99", image: "/images/Like-New.png", category: "INTERIOR" },
-    { id: "fab-clean", name: "Fab Clean Carpet Shampoo Concentrate (1 litre)", price: "19.99", image: "/images/Fab-Clean.png", category: "INTERIOR" },
-    { id: "windscreen-cleaner", name: "Windscreen Cleaner - for Washing Tank (500ml)", price: "9.99", image: "/images/Bugger-Off.png", category: "EXTERIOR" },
-  ];
+    "like-new",
+    "fab-clean",
+    "windscreen-cleaner",
+  ].map((id) => getProductById(id)!);
 
   const suggested = [
-    { id: "leather-vinyl", name: "Leather & Vinyl Cleaner (500ml)", price: "29.99", image: "/images/Leather-and-vinyl-cleaner.png", category: "INTERIOR" },
-    { id: "carpet-cleaner", name: "Carpet & Upholstery Cleaner Concentrate (1 litre)", price: "19.99", image: "/images/Carpet-and-upholstery-cleaner.png", category: "INTERIOR" },
-    { id: "pro-shift", name: "Pro Shift Protein Based Spot Remover Concentrate (1 litre)", price: "19.99", image: "/images/Pro-Shift-Spot-remover.png", category: "INTERIOR" },
-  ];
+    "leather-vinyl",
+    "carpet-cleaner",
+    "pro-shift",
+  ].map((id) => getProductById(id)!);
 
   return (
     <div className="min-h-screen">

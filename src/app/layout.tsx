@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { CartProvider } from "@/hooks/use-cart";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,11 +27,13 @@ export default function RootLayout({
       className={`${inter.variable} scroll-smooth dark`}
     >
       <body className="bg-black font-sans text-white antialiased min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
